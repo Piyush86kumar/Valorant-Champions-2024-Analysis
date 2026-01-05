@@ -1,0 +1,35 @@
+match_id,format,maps_played,team1,team2,team1_score,team2_score,winner,looser,team1_ban1,team2_ban1,team1_pick1,team2_pick1,team1_ban2,team2_ban2,team1_pick2,team2_pick2,decider
+378662,Bo3,2,Sentinels,Gen.G,2,0,Gen.G,Sentinels,Icebox,Sunset,Haven,Ascent,Bind,Lotus,Not Valid for Bo3,Not Valid for Bo3,Abyss
+378663,Bo3,3,FunPlus Phoenix,Team Heretics,1,2,Team Heretics,FunPlus Phoenix,Sunset,Icebox,Abyss,Bind,Ascent,Haven,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378657,Bo3,3,KRÜ Esports,DRX,2,1,DRX,KRÜ Esports,Icebox,Lotus,Haven,Abyss,Ascent,Sunset,Not Valid for Bo3,Not Valid for Bo3,Bind
+378656,Bo3,2,Bilibili Gaming,FNATIC,2,0,FNATIC,Bilibili Gaming,Haven,Sunset,Bind,Lotus,Abyss,Icebox,Not Valid for Bo3,Not Valid for Bo3,Ascent
+378667,Bo3,2,TALON,LEVIATÁN,2,0,LEVIATÁN,TALON,Icebox,Lotus,Bind,Ascent,Haven,Abyss,Not Valid for Bo3,Not Valid for Bo3,Sunset
+378669,Bo3,3,Trace Esports,Team Vitality,1,2,Trace Esports,Team Vitality,Icebox,Lotus,Ascent,Sunset,Abyss,Haven,Not Valid for Bo3,Not Valid for Bo3,Bind
+378674,Bo3,2,Paper Rex,G2 Esports,2,0,G2 Esports,Paper Rex,Ascent,Sunset,Icebox,Lotus,Haven,Abyss,Not Valid for Bo3,Not Valid for Bo3,Bind
+378673,Bo3,2,FUT Esports,EDward Gaming,2,0,EDward Gaming,FUT Esports,Haven,Ascent,Lotus,Bind,Abyss,Icebox,Not Valid for Bo3,Not Valid for Bo3,Sunset
+378664,Bo3,3,Team Heretics,Gen.G,1,2,Team Heretics,Gen.G,Ascent,Sunset,Abyss,Lotus,Icebox,Haven,Not Valid for Bo3,Not Valid for Bo3,Bind
+378658,Bo3,2,DRX,FNATIC,0,2,DRX,FNATIC,Haven,Icebox,Abyss,Lotus,Ascent,Sunset,Not Valid for Bo3,Not Valid for Bo3,Bind
+378670,Bo3,3,Trace Esports,LEVIATÁN,1,2,Trace Esports,LEVIATÁN,Icebox,Lotus,Bind,Sunset,Haven,Abyss,Not Valid for Bo3,Not Valid for Bo3,Ascent
+378675,Bo3,3,G2 Esports,EDward Gaming,1,2,G2 Esports,EDward Gaming,Sunset,Ascent,Icebox,Haven,Lotus,Abyss,Not Valid for Bo3,Not Valid for Bo3,Bind
+378665,Bo3,2,FunPlus Phoenix,Sentinels,2,0,Sentinels,FunPlus Phoenix,Sunset,Icebox,Bind,Lotus,Haven,Ascent,Not Valid for Bo3,Not Valid for Bo3,Abyss
+378659,Bo3,2,KRÜ Esports,Bilibili Gaming,0,2,KRÜ Esports,Bilibili Gaming,Bind,Haven,Lotus,Icebox,Abyss,Ascent,Not Valid for Bo3,Not Valid for Bo3,Sunset
+378671,Bo3,2,TALON,Team Vitality,0,2,Team Vitality,TALON,Icebox,Abyss,Lotus,Sunset,Ascent,Haven,Not Valid for Bo3,Not Valid for Bo3,Bind
+378676,Bo3,2,FUT Esports,Paper Rex,0,2,Paper Rex,FUT Esports,Haven,Ascent,Sunset,Bind,Abyss,Icebox,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378666,Bo3,2,Sentinels,Gen.G,0,2,Sentinels,Gen.G,Ascent,Sunset,Lotus,Icebox,Abyss,Bind,Not Valid for Bo3,Not Valid for Bo3,Haven
+378660,Bo3,3,KRÜ Esports,FNATIC,2,1,FNATIC,KRÜ Esports,Bind,Icebox,Sunset,Haven,Abyss,Ascent,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378672,Bo3,2,LEVIATÁN,Team Vitality,2,0,LEVIATÁN,Team Vitality,Bind,Abyss,Icebox,Sunset,Lotus,Haven,Not Valid for Bo3,Not Valid for Bo3,Ascent
+378677,Bo3,3,EDward Gaming,Paper Rex,2,1,EDward Gaming,Paper Rex,Bind,Haven,Icebox,Sunset,Ascent,Abyss,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378822,Bo3,2,Sentinels,DRX,0,2,Sentinels,DRX,Ascent,Lotus,Sunset,Haven,Bind,Abyss,Not Valid for Bo3,Not Valid for Bo3,Icebox
+378823,Bo3,2,Trace Esports,EDward Gaming,0,2,EDward Gaming,Trace Esports,Icebox,Ascent,Bind,Sunset,Haven,Abyss,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378824,Bo3,2,LEVIATÁN,G2 Esports,0,2,LEVIATÁN,G2 Esports,Bind,Sunset,Icebox,Abyss,Lotus,Ascent,Not Valid for Bo3,Not Valid for Bo3,Haven
+378825,Bo3,2,FNATIC,Team Heretics,2,0,Team Heretics,FNATIC,Icebox,Ascent,Lotus,Abyss,Sunset,Bind,Not Valid for Bo3,Not Valid for Bo3,Haven
+378831,Bo3,2,Trace Esports,DRX,2,0,DRX,Trace Esports,Icebox,Ascent,Lotus,Abyss,Bind,Haven,Not Valid for Bo3,Not Valid for Bo3,Sunset
+378832,Bo3,2,FNATIC,G2 Esports,0,2,FNATIC,G2 Esports,Icebox,Sunset,Haven,Bind,Abyss,Ascent,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378826,Bo3,3,EDward Gaming,Sentinels,1,2,EDward Gaming,Sentinels,Icebox,Bind,Haven,Lotus,Ascent,Abyss,Not Valid for Bo3,Not Valid for Bo3,Sunset
+378827,Bo3,2,LEVIATÁN,Team Heretics,2,0,LEVIATÁN,Team Heretics,Bind,Ascent,Icebox,Lotus,Abyss,Sunset,Not Valid for Bo3,Not Valid for Bo3,Haven
+378834,Bo3,3,Sentinels,FNATIC,2,1,Sentinels,FNATIC,Haven,Icebox,Sunset,Bind,Abyss,Ascent,Not Valid for Bo3,Not Valid for Bo3,Lotus
+378833,Bo3,3,DRX,Team Heretics,2,1,Team Heretics,DRX,Bind,Ascent,Abyss,Sunset,Lotus,Haven,Not Valid for Bo3,Not Valid for Bo3,Icebox
+378828,Bo3,3,LEVIATÁN,EDward Gaming,2,1,EDward Gaming,LEVIATÁN,Bind,Ascent,Icebox,Lotus,Haven,Sunset,Not Valid for Bo3,Not Valid for Bo3,Abyss
+378835,Bo3,3,Sentinels,Team Heretics,2,1,Team Heretics,Sentinels,Sunset,Lotus,Haven,Icebox,Bind,Ascent,Not Valid for Bo3,Not Valid for Bo3,Abyss
+378836,Bo5,4,LEVIATÁN,Team Heretics,1,3,Team Heretics,LEVIATÁN,Bind,Ascent,Icebox,Sunset,NA for lower final Bo5,NA for lower final Bo5,Abyss,Lotus,Haven
+378829,Bo5,5,EDward Gaming,Team Heretics,3,2,EDward Gaming,Team Heretics,Ascent,NA for grand final Bo5,Haven,Sunset,Icebox,NA for grand final Bo5,Lotus,Bind,Abyss
