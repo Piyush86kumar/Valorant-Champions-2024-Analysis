@@ -4,7 +4,7 @@ This project provides a comprehensive analysis of match data from the Valorant C
 
 ## Dataset
 
-The dataset for this analysis is located in the `VCT_2024_seoul_dataset/` directory and was sourced by scrapping the vlr.gg website and it is also available on [Kaggle](https://www.kaggle.com/datasets/imohitujjain/vct-2024-seoul-dataset). It contains detailed information about matches, players, agents, and economy.
+The dataset for this analysis is located in the `VCT_2024_seoul_dataset/` directory and was sourced by scrapping the vlr.gg website and it is also available on [Kaggle](https://www.kaggle.com/datasets/piyush86kumar/valorant-champions-2024). It contains detailed information about matches, players, agents, and economy.
 
 ### Dataset Files
 
