@@ -1,78 +1,86 @@
-# VCT 2024 Seoul: A Multi-Dimensional Analysis of Professional Valorant
-
-## Step 1: Project Overview & "The Hook"
-
-**The Problem:** Professional Valorant is a data-heavy sport. With countless actions happening every second, how can we sift through the noise to identify the patterns that define a winning team? This project aims to answer that by analyzing player performance, agent meta, and economic strategies to uncover what truly leads to victory.
-
-**The Dataset:** To achieve a holistic view, I integrated over five distinct datasets from the VCT 2024 Seoul tournament, including detailed player statistics, match results, agent utilization, and round-by-round economy data. This combined dataset, comprising over 1,200 match entries, provides a rich foundation for discovering correlations between in-game metrics and match outcomes.
+**TO:** Head Coach, Strategic Staff  
+**FROM:** Data & Analytics Desk  
+**DATE:** 24 January 2026  
+**SUBJECT:** VCT Seoul 2024 - Post-Mortem Analysis & Strategic Directives  
 
 ---
 
-## Step 2: The Data Engineering (Showcase your "Data Cleaning")
+### **1. Executive Brief: The Three Pillars of Victory**
 
-Handling real-world data requires a robust data engineering strategy to ensure accuracy and consistency.
+This is not a summary; it's a formula. Our analysis of the VCT Seoul dataset reveals that championship-tier teams build their success on three non-negotiable pillars. Every directive in this report ladders up to reinforcing these pillars.
 
-**Merging Strategy:** The datasets were designed to be interoperable, with `match_id` and `player_id` serving as primary keys. For instance, `detailed_matches_player_stats` and `economy_data` can be linked via `match_id`. This allows for cross-domain analysis, such as correlating a player's performance with their team's economic status in a given match.
+1.  **Player Consistency Outweighs Flashiness:** The single most important player metric is **KAST%**. Players with a **KAST of 75% or higher** are the engine of winning teams. They guarantee impact every round, which is statistically more valuable than a high-risk, highlight-driven playstyle.
 
-**Preprocessing:**
-*   **Handling Percentages:** Columns like `kast` and `hs_percent` were stored as strings (e.g., "83%"). I wrote a script to strip the '%' symbol and convert these columns to float datatypes, making them ready for numerical analysis.
-*   **Parsing Complex Strings:** In the `economy_data` dataset, round information was stored in a condensed format like "2 (2)" (representing 2 rounds won out of 2 played). I parsed these strings to create separate columns for rounds played and rounds won for each buy category, transforming the data into a more usable format. Similarly, in the `agents_stats` notebook, the `map_utilizations` column, a string representation of a dictionary, was parsed using `ast.literal_eval` to expand map-specific agent pick rates into their own columns.
-*   **Handling Null Values:** Null values in `map_name` and `map_winner` were addressed by filtering the DataFrame for map-specific analyses, ensuring that calculations were only performed on relevant, complete data.
+2.  **Meta Mastery is Proactive, Not Reactive:** Winning teams don't just follow the meta; they dictate it. They showed a deep, map-specific understanding of agent compositions and used the **veto phase** to force opponents into uncomfortable matchups. Mastery of **Viper, Omen, and Sova** is mandatory.
 
-**Feature Engineering:**
-*   **Kills Per Round (KPR):** To normalize kill statistics across matches of varying lengths, I engineered a `kills_per_round` feature in the `Player_stats.ipynb` notebook by dividing a player's total kills by the number of rounds they played. This provides a clearer measure of a player's fragging consistency.
+3.  **Economic Control is Momentum Control:** The outcome of a match is heavily influenced by a few key economic inflection points. **Winning the pistol round** creates a snowball effect that is difficult to stop. Converting a single **thrifty/semi-buy round** is often the deciding factor in a close map.
 
 ---
 
-## Step 3: Analytical Deep-Dive (Combine the Notebooks)
+### **2. Player Intelligence: Threat Archetypes & Counter-Strategies**
 
-My analysis is grouped into three core pillars that together paint a complete picture of performance at VCT Seoul.
+Our analysis of player data from `Player_stats.ipynb` and `Detailed_player_stats.ipynb` identifies three key player archetypes we will face.
 
-### Pillar 1: Performance & Efficiency
-*Sources: `Player_stats.ipynb`, `Detailed_player_stats.ipynb`*
+#### **Archetype 1: The Consistent Contributor (High KAST/ADR)**
+-   **Exemplar:** `t3xture` (GEN), `Chronicle` (FNC).
+-   **Statistical Signature:**
+    -   **KAST%:** 83% (t3xture), 73% (Chronicle)
+    -   **ADR:** >150
+    -   **Multi-Kills:** Consistently high, but not reckless.
+-   **Threat Profile:** These players are the backbone of their teams. They are never truly out of a round and excel at post-plant and trade-heavy scenarios. They are incredibly difficult to shut down completely.
+-   **Counter-Strategy:** Force them into isolated 1-on-1s. Overwhelm their position with coordinated utility to prevent them from getting a trade or falling back to a safe position. Do not give them duels on their terms.
 
-This pillar focuses on identifying the top-tier players who consistently deliver high-impact performances. By sorting and analyzing various performance metrics, we can pinpoint the tournament's most valuable players.
+#### **Archetype 2: The Aggressive Space-Creator (High FK/ACS)**
+-   **Exemplar:** `ZmjjKK` (EDG), `Derke` (FNC).
+-   **Statistical Signature:**
+    -   **First Kills (FK):** 105 (ZmjjKK) - an astronomical outlier. 51 (Derke).
+    -   **ACS:** >250
+    -   **FK/FD Differential:** Positive. They win their opening duels more often than they lose.
+-   **Threat Profile:** These players are the battering ram. Their primary function is to create chaos and open up sites. They force you to react and can single-handedly break a defensive setup.
+-   **Counter-Strategy:** Use counter-utility (e.g., Cypher trips, slow orbs) to disrupt their entry paths. Jiggle-peek and play for information; do not commit to a dry 50/50 duel against them. Trade them immediately.
 
-**Key Visual: Top 5 Players by Rating**
-
-| Player    | Team | Rating | ACS   | ADR   |
-|-----------|------|--------|-------|-------|
-| trexx     | VIT  | 1.23   | 228.0 | 155.0 |
-| Derke     | FNC  | 1.22   | 257.4 | 167.0 |
-| primmie   | TLN  | 1.22   | 243.0 | 152.4 |
-| Chronicle | FNC  | 1.21   | 224.4 | 153.8 |
-| keznit    | KRÜ  | 1.18   | 250.8 | 170.7 |
-
-**Insight:** Players like **t3xture (Gen.G)** stand out as significant outliers. While his overall tournament rating was a strong 1.14, his performance on specific maps was exceptional. For example, in the match against Sentinels, he achieved a staggering **1.60 rating on Haven**, showcasing his map-specific dominance and clutch potential.
-
-### Pillar 2: The Meta & Strategic Trends
-*Sources: `Agents_stats.ipynb`, `Detailed_matches_maps.ipynb`*
-
-Understanding the agent meta is crucial for grasping the strategic landscape of Valorant. This analysis delves into which agents were most popular and how their pick-rates varied across different maps.
-
-**Insight:** The analysis in `Agents_stats.ipynb` reveals distinct agent preferences for each map. A heatmap visualization shows that while some agents like Jett and Omen have high utilization across the board, others are niche picks for specific maps. For example, the popularity of Viper on maps with multiple sites like Icebox and Breeze highlights how teams adapt their strategies to the map's layout. This demonstrates an ability to perform categorical analysis and extract strategic trends from the data.
-
-### Pillar 3: Economic Impact
-*Sources: `Economy_stats.ipynb`*
-
-Valorant is as much a game of resource management as it is of aim. This pillar explores the relationship between a team's economy and their success in winning rounds.
-
-**Insight:** The analysis confirms a strong correlation between economic advantage and round win-rate. By calculating the win percentages for different buy-types (Eco, Semi-buy, Full-buy), it becomes clear that teams who maintain a healthy economy and secure more full-buy rounds have a significantly higher chance of winning. For example, across the tournament, teams won over 60% of their full-buy rounds, while winning less than 20% of their eco rounds on average. This proves a capacity for numerical correlation and understanding the economic drivers of success.
+#### **Archetype 3: The Unkillable Anchor**
+-   **Exemplar:** Players who may not top the scoreboard but have incredibly high survival rates and KAST%.
+-   **Threat Profile:** These are the clutch players who win the 1vX scenarios. They are masters of positioning and timing.
+-   **Counter-Strategy:** When executing on their site, assume they are still alive until proven otherwise. Use utility to flush them out of common "rat" spots. Do not get impatient in the post-plant.
 
 ---
 
-## Step 4: Technical Stack & Skills Learned
+### **3. The Meta Blueprint: Map & Agent Playbook**
 
-*   **Languages/Libraries:** Python (Pandas, NumPy, Matplotlib, Seaborn)
-*   **Statistical Techniques:** Exploratory Data Analysis (EDA), Correlation Analysis, Outlier Detection, Data Cleaning and Preprocessing.
-*   **Lessons Learned:** A key technical challenge was handling the varied data formats across the different CSV files. For example, the `agents_stats.csv` file stored map utilization data as a stringified dictionary. Overcoming this required using Python's `ast` library to safely parse the string and transform it into a usable data structure. This experience reinforced the importance of robust data cleaning and transformation pipelines when working with real-world, semi-structured data.
+*Insights from `Agents_stats.ipynb` & `Detailed_matches_maps.ipynb`*
+
+#### **Map Control - The Veto is Round Zero:**
+-   **Core Battlegrounds:** Bind, Lotus, Haven. We must have elite-tier strategies for all three.
+-   **The Icebox Problem:** The high ban rate of Icebox indicates it is a specialist's map. We have two options: either become the specialists that other teams fear, or develop it enough that they waste a ban on it.
+-   **Actionable Directive:** Our map pool must be deep enough to allow us to ban our opponent's comfort pick while still playing in our own comfort zone.
+
+#### **Agent Power Picks - The Must-Haves:**
+-   **Omen (Controller):** **62% Pick Rate**. His global presence and rechargeable smokes make him the most flexible controller. Essential for **Lotus (100%)** and **Haven (100%)**.
+-   **Viper (Controller):** **50% Pick Rate**. Non-negotiable on **Bind (90%)** and **Icebox (100%)**. Her site lockdown potential is unmatched. A team without a world-class Viper is at a severe disadvantage.
+-   **Sova (Initiator):** **52% Pick Rate**. The gold standard for information gathering, especially on maps like **Ascent (100%)** and **Haven (89%)**.
+-   **Raze (Duelist):** **41% Pick Rate**. The premier duelist for maps requiring explosive entry, such as **Bind (87%)** and **Lotus (75%)**.
+
+**Strategic Insight:** Our players must have mastery-level proficiency with these agents. Our playbook should be built around leveraging their strengths on their respective power maps.
 
 ---
 
-## Step 5: Final Conclusion & "Next Steps"
+### **4. The Economic Edge: Principles for Financial Dominance**
 
-**Summary: The Profile of a Winner**
-The data reveals a clear "profile of a winner" at VCT Seoul. Winning teams are not just mechanically skilled; they are also strategically and economically sound. A recurring pattern is the importance of entry duels: teams with a **First Kill/First Death difference of +1 on a map won over 75% of those maps**. This highlights the massive impact of securing an early advantage in a round. Top-performing teams consistently had players who could create these early openings.
+*Analysis from `Economy_stats.ipynb`*
 
-**Future Scope:**
-If given more time, the next logical step would be to move from descriptive analytics to predictive modeling. I would aim to build a machine learning model to forecast match winners based on pre-match data like agent compositions, historical player performance on a given map, and team economic ratings. This could provide valuable insights for teams and analysts alike.
+1.  **The Pistol Round Mandate:** We must treat the pistol round as a map-point opportunity. Winning it provides an average **60-70% chance to win the subsequent round**. This two-round swing is the single most significant momentum driver in the game.
+2.  **The Calculated Thrifty:** While the win rate on eco/thrifty rounds is low (<20%), their impact is immense. We must have at least two structured "hero rifle" plays per map designed to break the opponent's bank. Winning even one of these can decide a 13-11 game.
+3.  **Full-Buy Discipline:** Top teams convert **>60%** of their full-buy rounds. This is where our core strategy and execution must shine. Wasting a full-buy round is an unacceptable error.
+
+---
+
+### **5. Actionable Directives for Next Scrim Block**
+
+Based on this analysis, our immediate focus will be:
+
+-   **Drill Pistol Rounds (Priority 1):** Dedicate 25% of our practice time this week to pistol round strategies for both Attack and Defense on our core map pool.
+-   **Develop KAST-Centric Scrim Reviews:** During VOD review, we will track and praise high-KAST% rounds, not just multi-kill rounds. We will analyze rounds where players contributed through trades, assists, or survival.
+-   **Run Anti-Archetype Scenarios:** We will simulate facing an aggressive "Space Creator" and a passive "Anchor" and drill our counter-strategies.
+-   **Viper Masterclass on Bind/Icebox:** Our designated Viper player will have dedicated sessions to master lineups and setups on these critical maps.
+-   **Economic Simulations:** We will run scrims where we are deliberately put into an economic deficit to practice our thrifty-round playbook and test our mental resilience.
