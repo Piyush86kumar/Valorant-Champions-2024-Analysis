@@ -6,7 +6,7 @@ This project provides a comprehensive analysis of match data from the Valorant C
 
 The main findings of this analysis are summarized in the following report:
 
-*   **`VCT 2024 Data Analysis Report.pdf`**: A comprehensive PDF report summarizing the key findings of the VCT 2024 data analysis.
+*   [**`VCT 2024 Data Analysis Report.pdf`**](Report/VCT 2024 Data Analysis Report.pdf): A comprehensive PDF report summarizing the key findings of the VCT 2024 data analysis.
 
 ## Dataset
 
