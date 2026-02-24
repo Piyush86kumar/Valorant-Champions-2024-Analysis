@@ -2,6 +2,12 @@
 
 This project provides a comprehensive analysis of match data from the Valorant Champions 2024 tournament. It utilizes a rich dataset to explore player statistics, agent performance, map trends, and economic factors throughout the event. The analysis is presented through a series of Jupyter Notebooks, each focusing on a different aspect of the tournament.
 
+## Project Reports
+
+The main findings of this analysis are summarized in the following report:
+
+*   **`CHAMPIONS_2024_REPORT.md`**: A specialized report focusing on the champions of the 2024 tournament.
+
 ## Dataset
 
 The dataset for this analysis is located in the `VCT_2024_seoul_dataset/` directory and was sourced by scrapping the vlr.gg website and it is also available on [Kaggle](https://www.kaggle.com/datasets/piyush86kumar/valorant-champions-2024). It contains detailed information about matches, players, agents, and economy.
