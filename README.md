@@ -2,6 +2,11 @@
 
 This project provides a comprehensive analysis of match data from the Valorant Champions 2024 tournament. It utilizes a rich dataset to explore player statistics, agent performance, map trends, and economic factors throughout the event. The analysis is presented through a series of Jupyter Notebooks, each focusing on a different aspect of the tournament.
 
+# Process Flow
+<p style="text-align:center;">
+<img src = "asset/VCT_data_analysis.png" width = "500" height = "1000">
+</p>
+
 ## Project Reports
 
 The main findings of this analysis are summarized in the following report:
